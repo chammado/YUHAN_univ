@@ -23,7 +23,7 @@ int main()
     int condition = 32;
     cout << "\x1b[000m" << "화면에 그림을 그리는 프로그램입니다." << endl;
     cout << "학번 : 202127073" << endl;
-    cout << "이름 : 김병규" << endl;
+    cout << "이름 : 김병규" << endl << endl;
     cout << "\x1b[037m" << "흰색 블록을 그리는 키코드 : 1 (1)" << endl;
     cout << "\x1b[031m" << "빨강색 블록을 그리는 키코드 : 2 (10)" << endl;
     cout << "\x1b[032m" << "녹색 블록을 그리는 키코드 : 4 (100)" << endl;
