@@ -44,7 +44,7 @@ int main()
                 if (num % 32 == 0 || rest >= 1)
                 {
                     rest = 0;
-                    cout << "\x1b[035m" << "ㅁ" << endl;
+                    
                     cout << "\x1b[035m" << "##########" << endl;
                     cout << "\x1b[035m" << "##########" << endl;
                     cout << "\x1b[035m" << "##########" << endl;
@@ -67,7 +67,7 @@ int main()
                 if (num % 16 == 0 || rest >= 1)
                 {
                     rest = 0;
-                    cout << "\x1b[036m" << "ㅁ" << endl;
+                    
                     cout << "\x1b[036m" << "##########" << endl;
                     cout << "\x1b[036m" << "##########" << endl;
                     cout << "\x1b[036m" << "##########" << endl;
@@ -90,7 +90,7 @@ int main()
                 if (num % 8 == 0 || rest >= 1)
                 {
                     rest = 0;
-                    cout << "\x1b[033m" << "ㅁ" << endl;
+                    
                     cout << "\x1b[033m" << "##########" << endl;
                     cout << "\x1b[033m" << "##########" << endl;
                     cout << "\x1b[033m" << "##########" << endl;
@@ -113,7 +113,7 @@ int main()
                 if (num % 4 == 0 || rest >= 1)
                 {
                     rest = 0;
-                    cout << "\x1b[032m" << "ㅁ" << endl;
+                    
                     cout << "\x1b[032m" << "##########" << endl;
                     cout << "\x1b[032m" << "##########" << endl;
                     cout << "\x1b[032m" << "##########" << endl;
@@ -136,7 +136,7 @@ int main()
                 if (num % 2 == 0 || rest >= 1)
                 {
                     rest = 0;
-                    cout << "\x1b[031m" << "ㅁ" << endl;
+                    
                     cout << "\x1b[031m" << "##########" << endl;
                     cout << "\x1b[031m" << "##########" << endl;
                     cout << "\x1b[031m" << "##########" << endl;
@@ -159,7 +159,7 @@ int main()
                 if (num % 1 == 0 || rest >= 1)
                 {
                     rest = 0;
-                    cout << "\x1b[037m" << "ㅁ" << endl;
+                    
                     cout << "\x1b[037m" << "##########" << endl;
                     cout << "\x1b[037m" << "##########" << endl;
                     cout << "\x1b[037m" << "##########" << endl;
