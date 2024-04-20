@@ -15,6 +15,9 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
     <ClCompile Include="..\..\..\..\Users\KBG\Desktop\KDW-main\KDW-main\KimEngine\Lecture06-HW\HW\HW\Lecture06-HW.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
@@ -30,12 +33,6 @@
     <ClCompile Include="..\..\..\..\Users\KBG\Desktop\KDW-main\KDW-main\KimEngine\Lecture06-HW\HW\HW\Star.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
-    <None Include="..\..\..\..\Users\KBG\Desktop\KDW-main\KDW-main\KimEngine\Lecture06-HW\HW\HW\HW.vcxproj" />
-    <None Include="..\..\..\..\Users\KBG\Desktop\KDW-main\KDW-main\KimEngine\Lecture06-HW\HW\HW\HW.vcxproj.filters" />
-    <None Include="..\..\..\..\Users\KBG\Desktop\KDW-main\KDW-main\KimEngine\Lecture06-HW\HW\HW\packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\..\Users\KBG\Desktop\KDW-main\KDW-main\KimEngine\Lecture06-HW\HW\HW\MObject.h">
