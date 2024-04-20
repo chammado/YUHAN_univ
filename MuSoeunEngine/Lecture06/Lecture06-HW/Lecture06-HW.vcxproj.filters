@@ -15,36 +15,36 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Lecture06-HW.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="MObiect.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="MSList.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectTest.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Star.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\..\Users\KBG\Desktop\KDW-main\KDW-main\KimEngine\Lecture06-HW\HW\HW\Lecture06-HW.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\Users\KBG\Desktop\KDW-main\KDW-main\KimEngine\Lecture06-HW\HW\HW\MObject.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\Users\KBG\Desktop\KDW-main\KDW-main\KimEngine\Lecture06-HW\HW\HW\MSList.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\Users\KBG\Desktop\KDW-main\KDW-main\KimEngine\Lecture06-HW\HW\HW\ObjectTest.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\Users\KBG\Desktop\KDW-main\KDW-main\KimEngine\Lecture06-HW\HW\HW\Star.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\..\..\Users\KBG\Desktop\KDW-main\KDW-main\KimEngine\Lecture06-HW\HW\HW\MObject.h">
+    <ClInclude Include="MObject.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\Users\KBG\Desktop\KDW-main\KDW-main\KimEngine\Lecture06-HW\HW\HW\MSList.h">
+    <ClInclude Include="MSList.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\Users\KBG\Desktop\KDW-main\KDW-main\KimEngine\Lecture06-HW\HW\HW\ObjectTest.h">
+    <ClInclude Include="ObjectTest.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\Users\KBG\Desktop\KDW-main\KDW-main\KimEngine\Lecture06-HW\HW\HW\star.hpp">
+    <ClInclude Include="Star.hpp">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>

@@ -18,26 +18,10 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\..\..\Users\KBG\Desktop\KDW-main\KDW-main\KimEngine\Lecture06-HW\HW\HW\Lecture06-HW.cpp" />
-    <ClCompile Include="..\..\..\..\Users\KBG\Desktop\KDW-main\KDW-main\KimEngine\Lecture06-HW\HW\HW\MObject.cpp" />
-    <ClCompile Include="..\..\..\..\Users\KBG\Desktop\KDW-main\KDW-main\KimEngine\Lecture06-HW\HW\HW\MSList.cpp" />
-    <ClCompile Include="..\..\..\..\Users\KBG\Desktop\KDW-main\KDW-main\KimEngine\Lecture06-HW\HW\HW\ObjectTest.cpp" />
-    <ClCompile Include="..\..\..\..\Users\KBG\Desktop\KDW-main\KDW-main\KimEngine\Lecture06-HW\HW\HW\Star.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\..\..\Users\KBG\Desktop\KDW-main\KDW-main\KimEngine\Lecture06-HW\HW\HW\MObject.h" />
-    <ClInclude Include="..\..\..\..\Users\KBG\Desktop\KDW-main\KDW-main\KimEngine\Lecture06-HW\HW\HW\MSList.h" />
-    <ClInclude Include="..\..\..\..\Users\KBG\Desktop\KDW-main\KDW-main\KimEngine\Lecture06-HW\HW\HW\ObjectTest.h" />
-    <ClInclude Include="..\..\..\..\Users\KBG\Desktop\KDW-main\KDW-main\KimEngine\Lecture06-HW\HW\HW\star.hpp" />
-  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{ed34856b-e036-4dab-9943-8c3f1cd7b9fe}</ProjectGuid>
+    <ProjectGuid>{4abcfc11-9011-4e37-928f-6ca1c8f2ea35}</ProjectGuid>
     <RootNamespace>Lecture06HW</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
@@ -142,6 +126,22 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Lecture06-HW.cpp" />
+    <ClCompile Include="MObiect.cpp" />
+    <ClCompile Include="MSList.cpp" />
+    <ClCompile Include="ObjectTest.cpp" />
+    <ClCompile Include="Star.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="MObject.h" />
+    <ClInclude Include="MSList.h" />
+    <ClInclude Include="ObjectTest.h" />
+    <ClInclude Include="Star.hpp" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
     <Import Project="..\packages\glfw.3.4.0\build\native\glfw.targets" Condition="Exists('..\packages\glfw.3.4.0\build\native\glfw.targets')" />
