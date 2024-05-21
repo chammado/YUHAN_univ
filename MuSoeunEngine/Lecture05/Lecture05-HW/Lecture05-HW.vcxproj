@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{17a99289-51bb-46e9-9a20-a2d555653b3e}</ProjectGuid>
-    <RootNamespace>Lecuture041</RootNamespace>
+    <ProjectGuid>{ca1bdeaa-c312-4298-80f7-561f7e53e6a1}</ProjectGuid>
+    <RootNamespace>Lecture05HW</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -127,7 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Lecuture04-1.cpp" />
+    <ClCompile Include="Lecture05-HW.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
