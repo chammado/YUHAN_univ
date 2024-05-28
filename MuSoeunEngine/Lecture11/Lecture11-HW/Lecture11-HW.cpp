@@ -3,6 +3,8 @@
 #include <GLFW/glfw3.h>
 #include <iostream>
 #include <cmath>
+#include <chrono>
+#include <thread>
 
 //학번 : 202127073
 //이름 : 김병규
