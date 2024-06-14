@@ -128,13 +128,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\..\Users\KBG\Desktop\24GameEngine-exam\24GameEngine-exam\MuSoeunEngine\FinalExam\main.cpp" />
-    <ClCompile Include="..\..\..\..\Users\KBG\Desktop\24GameEngine-exam\24GameEngine-exam\MuSoeunEngine\FinalExam\Object.cpp" />
-    <ClCompile Include="..\..\..\..\Users\KBG\Desktop\24GameEngine-exam\24GameEngine-exam\MuSoeunEngine\FinalExam\Transform.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Transform.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\..\Users\KBG\Desktop\24GameEngine-exam\24GameEngine-exam\MuSoeunEngine\FinalExam\Object.h" />
-    <ClInclude Include="..\..\..\..\Users\KBG\Desktop\24GameEngine-exam\24GameEngine-exam\MuSoeunEngine\FinalExam\Transform.h" />
+    <ClInclude Include="Object.h" />
+    <ClInclude Include="Transform.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
