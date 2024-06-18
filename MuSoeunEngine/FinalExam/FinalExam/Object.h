@@ -1,98 +1,69 @@
 #pragma once
-
 #include <GLFW/glfw3.h>
 
+void PixelToOpenGL(float FloorXpixel, float FloorYpixel);
+
+// 기본 클래스
 class Object {
 public:
-    virtual void OnCollisionEnter(Object& other) {
-        // 기본적으로 아무 동작도 하지 않음
-    }
-    virtual void Render() {
-        // 기본적으로 아무 그림도 그리지 않음
-    }
+    float posX, posY, width, height;
+    Object(float x = 0.0f, float y = 0.0f, float w = 0.0f, float h = 0.0f)
+        : posX(x), posY(y), width(w), height(h) {}
+
+    virtual void OnCollisionEnter(Object& other) {}
 };
 
+// Player 클래스
 class Player : public Object {
 public:
-    void Render() override {
-        float size_cm = 0.5f; // 플레이어 한 변의 길이 (50cm)
-        float borderThickness_cm = 0.3f; // 테두리 두께 (3cm)
+    float velocityY = 0.0f; // y 축 속도
+    bool isJumping = false; // 점프 상태
 
-        // 화면의 1px이 1cm와 같다고 가정
-        float halfSize = size_cm / 2.0f;
-        float halfBorderThickness = borderThickness_cm / 2.0f;
-
-        // 플레이어 색상 설정 (빨간색)
-        glColor3f(1.0f, 0.0f, 0.0f);
-        glBegin(GL_QUADS);
-        glVertex2f(-halfSize, halfSize);  // 왼쪽 위
-        glVertex2f(halfSize, halfSize);   // 오른쪽 위
-        glVertex2f(halfSize, -halfSize);  // 오른쪽 아래
-        glVertex2f(-halfSize, -halfSize); // 왼쪽 아래
-        glEnd();
-
-        // 플레이어 테두리 그리기
-        glColor3f(0.0f, 0.0f, 0.0f); // 검정색
-        glLineWidth(1.0f); // 두께 1px
-        glBegin(GL_LINE_LOOP);
-        glVertex2f(-halfSize - halfBorderThickness, halfSize + halfBorderThickness);  // 왼쪽 위
-        glVertex2f(halfSize + halfBorderThickness, halfSize + halfBorderThickness);   // 오른쪽 위
-        glVertex2f(halfSize + halfBorderThickness, -halfSize - halfBorderThickness);  // 오른쪽 아래
-        glVertex2f(-halfSize - halfBorderThickness, -halfSize - halfBorderThickness); // 왼쪽 아래
-        glEnd();
-    }
-};
-
-class EnemyBlock : public Object {
-private:
-    float width;
-    float height;
-
-public:
-    EnemyBlock(float w, float h) : width(w), height(h) {}
+    Player() : Object(100.0f, 450.0f, 50.0f, 50.0f) {}
 
     void OnCollisionEnter(Object& other) override {
-        // 기본적으로 아무 동작도 하지 않음
+        drawPlayer();
     }
-
-    void Render() override {
-        // 장애물을 녹색 (R: 0, G: 255, B: 0)으로 그린다
-        glColor3f(0.0f, 1.0f, 0.0f); // RGB 값을 0.0f에서 1.0f 범위로 변환
-        glBegin(GL_QUADS);
-        glVertex2f(-width / 2.0f, height / 2.0f);   // 왼쪽 위
-        glVertex2f(width / 2.0f, height / 2.0f);    // 오른쪽 위
-        glVertex2f(width / 2.0f, -height / 2.0f);   // 오른쪽 아래
-        glVertex2f(-width / 2.0f, -height / 2.0f);  // 왼쪽 아래
-        glEnd();
-    }
+    void drawPlayer();
 };
 
+// EnemyBlock 클래스
+class EnemyBlock : public Object {
+public:
+    float posX1 = 800.0f;
+    float posX2 = 1600.0f;
+    float posX3 = 2400.0f;
+    float posX4 = 2500.0f;
+
+    EnemyBlock() : Object(0.0f, 0.0f, 50.0f, 100.0f) {}
+
+    void OnCollisionEnter(Object& other) override {
+        drawCac();
+    }
+    void drawCac();
+};
+
+// Floor 클래스
 class Floor : public Object {
 public:
     void OnCollisionEnter(Object& other) override {
-        // 기본적으로 아무 동작도 하지 않음
+        drawFloor();
     }
-
-    void Render() override {
-        // 바닥을 황색 (R: 255, G: 200, B: 15)으로 그린다
-        glColor3f(1.0f, 0.7843f, 0.0588f); // RGB 값을 0.0f에서 1.0f 범위로 변환
-        glBegin(GL_QUADS);
-        glVertex2f(-1.0f, -0.75f); // 왼쪽 아래 (바닥)
-        glVertex2f(1.0f, -0.75f);  // 오른쪽 아래 (바닥)
-        glVertex2f(1.0f, -1.0f);   // 오른쪽 위 (바닥)
-        glVertex2f(-1.0f, -1.0f);  // 왼쪽 위 (바닥)
-        glEnd();
-    }
+    void drawFloor();
 };
 
+// Star 클래스
 class Star : public Object {
 public:
+    float size;
+
+    Star() : Object(), size(0.0f) {}
+
     void OnCollisionEnter(Object& other) override {
-        // 기본적으로 아무 동작도 하지 않음
+        drawStar();
     }
+    void drawStar() const;
 };
 
-// 물리 충돌 처리 함수 (미구현)
-int PhysicsAABB(Object A, Object B) {
-    return 0;
-}
+// PhysicsAABB 함수
+int PhysicsAABB(const Object& A, const Object& B);
