@@ -25,52 +25,42 @@ bool isCollision = false; // 충돌 여부 확인 변수
 // 시간 측정을 위한 변수
 high_resolution_clock::time_point lastTime;
 
-// 점프 시간 측정을 위한 변수
-bool spacePressed = false;
-float jumpTime = 0.0f;
-const float MAX_JUMP_TIME = 0.5f; // 최대 점프 시간 (0.5초)
-
+// Error callback 함수
 void errorCallback(int error, const char* description) {
     printf("GLFW Error: %s", description);
 }
 
+// Key callback 함수
 void keyCallback(GLFWwindow* window, int key, int scancode, int action, int mods) {
     if (key == GLFW_KEY_SPACE && action == GLFW_PRESS && !player.isJumping) {
-        spacePressed = true;
-        jumpTime = 0.0f; // 점프 시간 초기화
-    }
-    if (key == GLFW_KEY_SPACE && action == GLFW_RELEASE && !player.isJumping) {
-        spacePressed = false;
-        player.velocityY = 1000.0f * (jumpTime / MAX_JUMP_TIME); // 점프 시작 (비례 속도 설정)
+        player.velocityY = 1000.0f; // 점프 시작 (5m = 500픽셀)
         player.isJumping = true;
-        jumpTime = 0.0f; // 점프 시간 초기화
     }
 }
 
+// Physics 함수
 int Physics() {
     return 0;
 }
 
+// Initialize 함수
 int Initialize() {
     glClearColor(0.0f, 0.11f, 0.25f, 1.0f);
     lastTime = high_resolution_clock::now();
     return 0;
 }
 
+// Update 함수
 int Update(EnemyBlock& enemy, Player& player, Star stars[], int starCount, float deltaTime) {
     float gravity = 9.8f * 100; // 중력 가속도 (픽셀 단위)
 
     if (isCollision) return 0;
 
-    if (spacePressed && jumpTime < MAX_JUMP_TIME) {
-        jumpTime += deltaTime; // 스페이스바를 누르는 동안 점프 시간 증가
-    }
-
     // 플레이어 위치 업데이트
     applyGravityAndJump(player.posY, player.velocityY, player.isJumping, gravity, deltaTime);
 
     // 적 위치 업데이트
-    float enemySpeed = 225.0f; // 적 이동 속도
+    float enemySpeed = 300.0f; // 적 이동 속도
     updateEnemyPosition(enemy.posX1, enemySpeed, deltaTime);
     updateEnemyPosition(enemy.posX2, enemySpeed, deltaTime);
     updateEnemyPosition(enemy.posX3, enemySpeed, deltaTime);
@@ -78,7 +68,7 @@ int Update(EnemyBlock& enemy, Player& player, Star stars[], int starCount, float
     resetEnemyPositions(enemy, -10.0f);
 
     // 별 위치 업데이트
-    float starSpeed = 75.0f; // 별 이동 속도
+    float starSpeed = 100.0f; // 별 이동 속도
     for (int i = 0; i < starCount; ++i) {
         updateStarPosition(stars[i].posX, starSpeed, deltaTime);
         resetStarPosition(stars[i].posX, -10.0f, 810.0f);
@@ -95,6 +85,7 @@ int Update(EnemyBlock& enemy, Player& player, Star stars[], int starCount, float
     return 0;
 }
 
+// Render 함수
 int Render(EnemyBlock& enemy, Player& player, const Star stars[], int starCount) {
     glClear(GL_COLOR_BUFFER_BIT);
 
@@ -109,6 +100,7 @@ int Render(EnemyBlock& enemy, Player& player, const Star stars[], int starCount)
     return 0;
 }
 
+// main 함수
 int main(void) {
     _CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
 

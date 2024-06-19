@@ -41,7 +41,7 @@ void resetStarPosition(float& x, float resetThreshold, float newX) {
 void applyGravityAndJump(float& posY, float& velocityY, bool& isJumping, float gravity, float deltaTime) {
     if (isJumping) {
         velocityY -= gravity * deltaTime;
-        posY -= velocityY * deltaTime;
+        posY -= velocityY * deltaTime;  // Á¡ÇÁ ½Ã yÁÂÇ¥¸¦ ³·Ãã
 
         if (posY >= 450.0f) { // ¹Ù´Ú À§Ä¡·Î °íÁ¤
             posY = 450.0f;
